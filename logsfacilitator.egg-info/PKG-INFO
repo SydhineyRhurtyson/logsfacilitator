@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: logsfacilitator
+Version: 0.1.0
+Summary: My tools for logging and performance measurement
+Requires-Dist: functools
+Requires-Dist: time
+Requires-Dist: datetime
+Requires-Dist: os
+Requires-Dist: tracemalloc

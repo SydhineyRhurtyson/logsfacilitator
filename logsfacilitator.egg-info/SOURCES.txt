@@ -1,0 +1,8 @@
+pyproject.toml
+logsfacilitator/__init__.py
+logsfacilitator/log.py
+logsfacilitator.egg-info/PKG-INFO
+logsfacilitator.egg-info/SOURCES.txt
+logsfacilitator.egg-info/dependency_links.txt
+logsfacilitator.egg-info/requires.txt
+logsfacilitator.egg-info/top_level.txt

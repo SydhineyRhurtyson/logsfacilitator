@@ -8,8 +8,8 @@ version = "0.1.1"
 readme = "README.md"
 description = "My tools for logging and performance measurement"
 dependencies = [
-    "Pandas",
-    "sympy"
+    "pandas>=2.3.3",
+    "sympy>=1.14.0"
 ]
 
 [project.urls]

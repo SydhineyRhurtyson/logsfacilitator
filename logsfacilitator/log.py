@@ -1,7 +1,7 @@
 from functools import wraps
 from time import perf_counter
 from datetime import datetime
-from os import getcwd,chdir 
+from os import getcwd,chdir ,path
 from tracemalloc import start,get_traced_memory,stop
 
 
@@ -17,18 +17,24 @@ Otherwise, it goes up one level in the directory and checks again until it finds
 
     Returns:
         str: Full path of the folder if it exists.
-
+    
+    Example:
+        >>> check_existence_of_folder(current_directory="/home/user/documents", folder="my_folder")
+        '/home/user/documents/my_folder'
+        
     Raises:
         FileNotFoundError: If the folder is not found in any directory.
     """
-    diretorio = folder.join(current_directory, folder)
-    if folder.isdir(diretorio):
+    diretorio = path.join(current_directory, folder)
+    print(type(diretorio))
+    print(diretorio)
+    if path.isdir(diretorio):
         return diretorio
     else: 
         chdir("..")
         current_directory = getcwd()
         if current_directory == old_directory:
-            raise FileNotFoundError(f"A folder '{folder}' não foi encontrada em nenhum diretório")
+            raise FileNotFoundError(f"A folder '{folder}' was not found in any directory")
         return check_existence_of_folder(current_directory,folder,old_directory=current_directory)
 
 def measure_time(folder:str,writer_log:bool=True):
@@ -51,12 +57,12 @@ def measure_time(folder:str,writer_log:bool=True):
             tempo = fim - inicio
             minuto = tempo // 60
             segundo = tempo % 60
-            registro =f"Registro:{datetime.now()}\nFuunção: {funcao.__name__}, Tempo: {minuto }:{segundo:.4f} segundos"
+            registro =f"Log:{datetime.now()}\nFunction: {funcao.__name__}, Time: {minuto }:{segundo:.4f} seconds"
             separa = "=+="*20
             diretorio_log = check_existence_of_folder(folder=folder)
 
             if writer_log:
-                with open(folder.join(diretorio_log,"log.txt"),"a",encoding="utf-8") as arquivo:
+                with open(path.join(diretorio_log,"log.txt"),"a",encoding="utf-8") as arquivo:
                     arquivo.write(f"{registro}\n{separa}\n")
             elif not writer_log:
                 print(f"{registro}\n{separa}\n")
@@ -80,11 +86,11 @@ def measure_memory(folder:str,writer_log:bool=True):
             resultado = funcao(*args, **kwargs)
             memoria_atual, memoria_maxima = get_traced_memory()
             stop()
-            registro = f"Função: {funcao.__name__}, Memória atual: {memoria_atual / 1024 / 1024:.2f} MB, Memória máxima: {memoria_maxima / 1024 / 1024:.2f} MB"
+            registro = f"Function: {funcao.__name__}, Memory current: {memoria_atual / 1024 / 1024:.2f} MB, Memory maximum: {memoria_maxima / 1024 / 1024:.2f} MB"
             separa = "=+="*20
             diretorio_log = check_existence_of_folder(folder=folder)
             if writer_log:
-                with open(folder.join(diretorio_log,"log.txt"),"a",encoding="utf-8") as arquivo:
+                with open(path.join(diretorio_log,"log.txt"),"a",encoding="utf-8") as arquivo:
                     arquivo.write(f"{registro}\n{separa}\n")
             elif not writer_log:
                 print(f"{registro}\n{separa}\n")
@@ -95,7 +101,7 @@ def measure_memory(folder:str,writer_log:bool=True):
 def measure_time_and_memory(folder:str,writer_log:bool=True):
     """
     Measures the time and memory used by a function and records the result.
-    
+
     args:
         folder (str): Name of the folder where the log will be saved.
         writer_log (bool, optional): If True, writes the log to a file. If False, prints the log to the console. Defaults to True.
@@ -113,11 +119,11 @@ def measure_time_and_memory(folder:str,writer_log:bool=True):
             tempo = fim - inicio
             minuto = tempo // 60
             segundo = tempo % 60
-            registro = f"Registro:{datetime.now()}\nFunção: {funcao.__name__}\nTempo: {minuto }:{segundo:.4f} segundos\nMemória atual: {memoria_atual / 1024 / 1024:.2f} MB, Memória máxima: {memoria_maxima / 1024 / 1024:.2f} MB"
+            registro = f"Registro:{datetime.now()}\nFunction: {funcao.__name__}\nTime: {minuto }:{segundo:.4f} seconds\nMemory current: {memoria_atual / 1024 / 1024:.2f} MB, Memory maximum: {memoria_maxima / 1024 / 1024:.2f} MB"
             separa = "=+="*20
             diretorio_log = check_existence_of_folder(folder=folder)
             if writer_log:
-                with open(folder.join(diretorio_log,"log.txt"),"a",encoding="utf-8") as arquivo:
+                with open(path.join(diretorio_log,"log.txt"),"a",encoding="utf-8") as arquivo:
                     arquivo.write(f"{registro}\n{separa}\n")
             elif not writer_log:
                 print(f"{registro}\n{separa}\n")
@@ -125,3 +131,5 @@ def measure_time_and_memory(folder:str,writer_log:bool=True):
         return interna
     return decorador
 
+
+check_existence_of_folder(folder="fax")

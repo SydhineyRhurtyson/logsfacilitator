@@ -7,11 +7,6 @@ name = "logsfacilitator"
 version = "0.1.0"
 description = "My tools for logging and performance measurement"
 dependencies = [
-    "functools",
-    "time",
-    "datetime",
-    "os",
-    "tracemalloc",
     "Pandas",
     "sympy"
 ]

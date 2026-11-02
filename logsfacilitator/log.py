@@ -5,21 +5,21 @@ from os import getcwd,chdir
 from tracemalloc import start,get_traced_memory,stop
 
 
-def check_existence_of_folder(current_directory:str=getcwd(),folder:str=None,diretorio_ant:str=None)->str:
+def check_existence_of_folder(current_directory:str=getcwd(),folder:str=None,old_directory:str=None)->str:
     """
-    Verifica a existência de uma pasta em um diretório e retorna o caminho completo da pasta se ela existir. 
-    Caso contrário, sobe um nível no diretório e verifica novamente até encontrar a pasta ou chegar ao diretório raiz.
+    Checks for the existence of a folder in a directory and returns the full path of the folder if it exists. 
+Otherwise, it goes up one level in the directory and checks again until it finds the folder or reaches the root directory
 
     Args:
-        current_directory (str): Diretório atual. Padrão é o diretório de trabalho atual.
-        folder (str): Nome da pasta a ser verificada.
-        diretorio_ant (str, optional): Diretório anterior. Padrão é None.
+        current_directory (str): Current directory. Default is the current working directory.
+        folder (str): Name of the folder to be checked.
+        old_directory (str, optional): Previous directory. Defaults to None.
 
     Returns:
-        str: Caminho completo da pasta se ela existir.
+        str: Full path of the folder if it exists.
 
     Raises:
-        FileNotFoundError: Se a pasta não for encontrada em nenhum diretório.
+        FileNotFoundError: If the folder is not found in any directory.
     """
     diretorio = folder.join(current_directory, folder)
     if folder.isdir(diretorio):
@@ -27,17 +27,18 @@ def check_existence_of_folder(current_directory:str=getcwd(),folder:str=None,dir
     else: 
         chdir("..")
         current_directory = getcwd()
-        if current_directory == diretorio_ant:
+        if current_directory == old_directory:
             raise FileNotFoundError(f"A folder '{folder}' não foi encontrada em nenhum diretório")
-        return check_existence_of_folder(current_directory,folder,diretorio_ant=current_directory)
+        return check_existence_of_folder(current_directory,folder,old_directory=current_directory)
 
 def measure_time(folder:str,writer_log:bool=True):
     """
-    Args:
-        folder (str): Nome da pasta onde o log será salvo.
-        writer_log (bool, optional): Se True, escreve o log em um arquivo. Se False, imprime o log no console. Padrão é True.
+    Measures the time taken by a function and logs the result.
 
-    Mede o tempo utilizado por uma função e registra o resultado.
+    Args:
+        folder (str): Name of the folder where the log will be saved.
+        writer_log (bool, optional): If True, writes the log to a file. If False, prints the log to the console. Defaults to True.
+
     """
     def decorador(funcao):
         @wraps(funcao)
@@ -65,11 +66,12 @@ def measure_time(folder:str,writer_log:bool=True):
 
 def measure_memory(folder:str,writer_log:bool=True):
     """
-    Args:
-        folder (str): Nome da pasta onde o log será salvo.
-        writer_log (bool, optional): Se True, escreve o log em um arquivo. Se False, imprime o log no console. Padrão é True.
+    Measures the memory used by a function and logs the result.
 
-    Mede a memória utilizada por uma função e registra o resultado.
+    Args:
+        folder (str): Name of the folder where the log will be saved.
+        writer_log (bool, optional): If True, writes the log to a file. If False, prints the log to the console. Defaults to True.
+
     """
     def decorador(funcao):
         @wraps(funcao)
@@ -92,11 +94,12 @@ def measure_memory(folder:str,writer_log:bool=True):
 
 def measure_time_and_memory(folder:str,writer_log:bool=True):
     """
+    Measures the time and memory used by a function and records the result.
+    
     args:
-        folder (str): Nome da pasta onde o log será salvo.
-        writer_log (bool, optional): Se True, escreve o log em um arquivo. Se False, imprime o log no console. Padrão é True.
+        folder (str): Name of the folder where the log will be saved.
+        writer_log (bool, optional): If True, writes the log to a file. If False, prints the log to the console. Defaults to True.
 
-    Mede o tempo e a memória utilizada por uma função e registra o resultado.
     """
     def decorador(funcao):
         @wraps(funcao)

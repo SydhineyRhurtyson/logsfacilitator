@@ -1,7 +1,7 @@
 # **logsfacilitator**
 This library aims to facilitate logging memory consumption and execution time for functions. Additionally, it centralizes utility functions shared across multiple projects, making it easier to access and reuse this code.
 ****
-**English** | [Português (Brasil)](https://github.com/SydhineyRhurtyson/logsfacilitator/blob/main/.gitignore/README.pt-BR.md) 
+**English** | [Português (Brasil)](https://github.com/SydhineyRhurtyson/logsfacilitator/blob/main/README.pt-BR.md) 
 ****
 ### How to Install
 Install via pip: 

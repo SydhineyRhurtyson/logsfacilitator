@@ -1,7 +1,7 @@
 # **logsfacilitator**
 Esta biblioteca tem como objetivo facilitar o registro de consumo de memória e tempo de execução de funções. Além disso, ela centraliza funções utilitárias compartilhadas entre múltiplos projetos, facilitando o acesso e a reutilização desse código.
 ****
-[English](https://github.com/SydhineyRhurtyson/logsfacilitator/blob/main/.gitignore/README.md) | [Português (Brasil)]
+[English](https://github.com/SydhineyRhurtyson/logsfacilitator/blob/main/README.md) | [Português (Brasil)]
 ****
 ### Como instalar
 Instalar via pip 

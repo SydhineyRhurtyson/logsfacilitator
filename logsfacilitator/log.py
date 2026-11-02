@@ -130,6 +130,3 @@ def measure_time_and_memory(folder:str,writer_log:bool=True):
             return resultado
         return interna
     return decorador
-
-
-check_existence_of_folder(folder="fax")

@@ -4,8 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "logsfacilitator"
-version = "0.1.4"
+version = "0.1.5"
 readme = "README.md"
+Author: "Sydhieny Rhurtyson"
+Author-email:"s.rhurtyson@gmail.com"
 description = "My tools for logging and performance measurement"
 dependencies = [
     "pandas>=2.3.3",

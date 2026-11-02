@@ -1,2 +1,3 @@
 from .log import measure_time,measure_memory,measure_time_and_memory,check_existence_of_folder
 from .functions import receber_lista_float, receber_lista_int
+from .calculosnumerioco import regresao,derivada,funca,formula

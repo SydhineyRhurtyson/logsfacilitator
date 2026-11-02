@@ -11,7 +11,8 @@ dependencies = [
     "time",
     "datetime",
     "os",
-    "tracemalloc"
+    "tracemalloc",
+    "Pandas"
 ]
 
 [project.urls]

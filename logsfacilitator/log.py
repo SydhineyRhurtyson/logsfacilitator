@@ -10,12 +10,14 @@ def check_existence_of_folder(current_directory:str=getcwd(),folder:str=None,dir
     Verifica a existência de uma pasta em um diretório e retorna o caminho completo da pasta se ela existir. 
     Caso contrário, sobe um nível no diretório e verifica novamente até encontrar a pasta ou chegar ao diretório raiz.
 
-    args:
+    Args:
         current_directory (str): Diretório atual. Padrão é o diretório de trabalho atual.
         folder (str): Nome da pasta a ser verificada.
         diretorio_ant (str, optional): Diretório anterior. Padrão é None.
+
     Returns:
         str: Caminho completo da pasta se ela existir.
+
     Raises:
         FileNotFoundError: Se a pasta não for encontrada em nenhum diretório.
     """
@@ -31,7 +33,7 @@ def check_existence_of_folder(current_directory:str=getcwd(),folder:str=None,dir
 
 def measure_time(folder:str,writer_log:bool=True):
     """
-    args:
+    Args:
         folder (str): Nome da pasta onde o log será salvo.
         writer_log (bool, optional): Se True, escreve o log em um arquivo. Se False, imprime o log no console. Padrão é True.
 
@@ -63,7 +65,7 @@ def measure_time(folder:str,writer_log:bool=True):
 
 def measure_memory(folder:str,writer_log:bool=True):
     """
-    args:
+    Args:
         folder (str): Nome da pasta onde o log será salvo.
         writer_log (bool, optional): Se True, escreve o log em um arquivo. Se False, imprime o log no console. Padrão é True.
 

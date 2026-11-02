@@ -13,3 +13,6 @@ dependencies = [
     "os",
     "tracemalloc"
 ]
+
+[project.urls]
+Homepage ="https://github.com/SydhineyRhurtyson/logsfacilitator"

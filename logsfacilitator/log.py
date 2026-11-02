@@ -45,6 +45,10 @@ def measure_time(folder:str,writer_log:bool=True):
         folder (str): Name of the folder where the log will be saved.
         writer_log (bool, optional): If True, writes the log to a file. If False, prints the log to the console. Defaults to True.
 
+    Example:
+        >>> @measure_time(folder="logs", writer_log=True)
+        >>> def my_function():
+        >>>     # Function code here
     """
     def decorador(funcao):
         @wraps(funcao)
@@ -77,7 +81,11 @@ def measure_memory(folder:str,writer_log:bool=True):
     Args:
         folder (str): Name of the folder where the log will be saved.
         writer_log (bool, optional): If True, writes the log to a file. If False, prints the log to the console. Defaults to True.
-
+    
+    Example:
+        >>> @measure_memory(folder="logs", writer_log=True)
+        >>> def my_function():
+        >>>     # Function code here
     """
     def decorador(funcao):
         @wraps(funcao)
@@ -102,10 +110,14 @@ def measure_time_and_memory(folder:str,writer_log:bool=True):
     """
     Measures the time and memory used by a function and records the result.
 
-    args:
+    Args:
         folder (str): Name of the folder where the log will be saved.
         writer_log (bool, optional): If True, writes the log to a file. If False, prints the log to the console. Defaults to True.
 
+    Example:
+        >>> @measure_time_and_memory(folder="logs", writer_log=True)
+        >>> def my_function():
+        >>>     # Function code here    
     """
     def decorador(funcao):
         @wraps(funcao)

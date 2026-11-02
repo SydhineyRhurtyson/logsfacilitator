@@ -7,6 +7,11 @@ def set_list_float(varia:str, console:bool=True)-> list[float]:
         console (bool): If True, it will prompt for input in the console. If False, it will receive a string with the values ​​separated by commas.
     Returns:
         list[float]: Float list.
+    Example:
+        >>> set_list_float("my_variable", console=True)
+        >>> returns: [1.0, 2.5, 3.14]
+        >>> set_list_float("1.0,2.5,3.14", console=False)
+        >>> returns: [1.0, 2.5, 3.14]
     """
     if console:
         x= input(f"""Enter the variables for {varia}
@@ -26,6 +31,12 @@ def set_list_int(varia:str, console:bool=True)-> list[int]:
         console (bool): If True, it will prompt for input in the console. If False, it will receive a string with the values ​​separated by commas.
     Returns:
         list[int]: int list.
+        
+    Example:
+        >>> set_list_float("my_variable", console=True)
+        >>> returns: [1.0, 2.5, 3.14]
+        >>> set_list_float("1.0,2.5,3.14", console=False)
+        >>> returns: [1.0, 2.5, 3.14]
     """
     if console:
         x= input(f"""Enter the variables for {varia}

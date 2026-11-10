@@ -1,3 +1,5 @@
+from subprocess import check_call
+from sys import executable
 def set_list_float(varia:str, console:bool=True)-> list[float]:
     """
     Get a str in transform in float list.
@@ -46,3 +48,26 @@ def set_list_int(varia:str, console:bool=True)-> list[int]:
         x= varia.split(",")
     x= [int(val) for val in x]
     return x
+
+
+
+def Check_library(library):
+    """Check if the library is already installed.
+
+    if not, install it.
+
+    Args:
+        library(str): name of library
+
+    """
+    try:
+        __import__(library)
+        print("Library already installed")
+    except ImportError:
+        check_call([
+            executable, "-m", "pip", "install", library
+        ])
+        print("Library installed")
+
+if __name__ =="__main__":
+    Check_library("pyspark")

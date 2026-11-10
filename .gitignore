@@ -5,3 +5,5 @@ dist/
 *.egg-info/
 logsfacilitator.egg-info/
 .venv/
+How_make_updates.MD
+test/

@@ -1,41 +1,47 @@
-# **logsfacilitator**
+# 📊 logsfacilitator
+
+![PyPI - Version](https://img.shields.io/pypi/v/logsfacilitator?style=flat-square&color=blue)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue?style=flat-square&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+
 Esta biblioteca tem como objetivo facilitar o registro de consumo de memória e tempo de execução de funções. Além disso, ela centraliza funções utilitárias compartilhadas entre múltiplos projetos, facilitando o acesso e a reutilização desse código.
 ****
-[English](https://github.com/SydhineyRhurtyson/logsfacilitator/blob/main/README.md) | [Português (Brasil)]
-****
-### Como instalar
-Instalar via pip 
+🌍 *[Read this in English](https://github.com/SydhineyRhurtyson/logsfacilitator/blob/main/README.md)*
 
-```
+---
+### 🚀 Como instalar
+Instalar via pip:
+
+```bash
 pip install logsfacilitator
 ```
 ****
-### Como usar 
+### 💻 Como usar 
 
 ```
 import logsfaciliti 
 
 ```
 ****
-### Decoratores
+### 🛠️ Decoradores
  
 *Os decoradores incluídos servem para registrar o consumo de recursos e o tempo de execução das funções.* 
 
-#### **measure_time**
+#### **⏱️ measure_time**
 Os decoradores incluídos servem para registrar o consumo de recursos e o tempo de execução das funções.
   
     Args:
         folder (str): Nome da pasta onde o log será salvo. A função verifica automaticamente se esta pasta existe.
         writer_log (bool, optional): Se True, registra o log no arquivo. Se False, imprime o log no console. O padrão é True.
 
-#### **measure_memory**
+#### **💾 measure_memory**
 Mede o consumo de memoria RAM usado para roda a função podendo impimir no terminal ou registrar em um arquivo de logs
   
     Args:
         folder (str): Nome da pasta onde o log será salvo. A função verifica automaticamente se esta pasta existe.
         writer_log (bool, optional): Se True, registra o log no arquivo. Se False, imprime o log no console. O padrão é True.
 
-#### **measure_time_and_memory**
+#### **⚡ measure_time_and_memory**
 Mede simultaneamente o tempo de execução e o consumo de memória RAM da função. O resultado pode ser impresso no terminal ou registrado em um arquivo de log.
  
     Args:
@@ -43,9 +49,9 @@ Mede simultaneamente o tempo de execução e o consumo de memória RAM da funç�
         writer_log (bool, optional): Se True, registra o log no arquivo. Se False, imprime o log no console. O padrão é True.
 
 ****
-### **Funções**
+### **🧰 Funções**
 
-#### **check_existence_of_folder**
+#### **📁 check_existence_of_folder**
 Verifica a existência de uma pasta em um diretório e retorna o caminho completo se ela existir. Caso contrário, sobe um nível no diretório e verifica novamente de forma recursiva até encontrar a pasta ou chegar ao diretório raiz.
 
     Args:
@@ -59,7 +65,7 @@ Verifica a existência de uma pasta em um diretório e retorna o caminho complet
     Raises: 
         FileNotFoundError: Se a pasta não for encontrada em nenhum nível até o diretório raiz.
 
-#### **set_list_float**
+#### **🔢 set_list_float**
 Recebe uma string e a transforma em uma lista de números decimais (float).
 
     Args:
@@ -69,7 +75,7 @@ Recebe uma string e a transforma em uma lista de números decimais (float).
     Retorno:
         (list[float]): Uma lista contendo os valores numéricos.
 
-#### **set_list_int**
+#### **🔢 set_list_int**
 Recebe uma string e a transforma em uma lista de números inteiros (ints).
 
     Args:
@@ -80,3 +86,8 @@ Recebe uma string e a transforma em uma lista de números inteiros (ints).
         (list[int]): Uma lista contendo os valores numéricos inteiros.
 
     
+#### **📦 Check_library**
+Verifica se uma biblioteca específica já está instalada no ambiente Python atual. Caso não esteja, realiza a instalação automaticamente utilizando o pip.
+
+    Args:
+        library (str): Nome da biblioteca a ser verificada e instalada.

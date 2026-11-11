@@ -1,41 +1,44 @@
-# **logsfacilitator**
-This library aims to facilitate logging memory consumption and execution time for functions. Additionally, it centralizes utility functions shared across multiple projects, making it easier to access and reuse this code.
+# **📊 logsfacilitator**
+
+![PyPI - Version](https://img.shields.io/pypi/v/logsfacilitator?style=flat-square&color=blue)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue?style=flat-square&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 ****
-**English** | [Português (Brasil)](https://github.com/SydhineyRhurtyson/logsfacilitator/blob/main/README.pt-BR.md) 
+**English** | [Leia em Português (Brasil)](https://github.com/SydhineyRhurtyson/logsfacilitator/blob/main/README.pt-BR.md) 
 ****
-### How to Install
+### 🚀 How to Install
 Install via pip: 
 
 ```
 pip install logsfacilitator
 ```
 ****
-### How to Use 
+### 💻 How to Use 
 
 ```
 import logsfaciliti 
 
 ```
 ****
-### Decorators
+### 🛠️ Decorators
  
 *The included decorators are used to record resource consumption and function execution time.* 
 
-#### **measure_time**
+#### **⏱️ measure_time**
 Measures the time taken to run the function. The result can be printed in the terminal or logged in a file.
     
     Args:
         folder (str): Name of the folder where the log will be saved. The function automatically checks if this folder exists.
         writer_log (bool, optional): If True, records the log in the file. If False, prints the log to the console. Default is True.
 
-#### **measure_memory**
+#### **💾 measure_memory**
 Measures the RAM memory consumption used to run the function. The result can be printed in the terminal or logged in a file.
     
     Args:
         folder (str): Name of the folder where the log will be saved. The function automatically checks if this folder exists.
         writer_log (bool, optional): If True, records the log in the file. If False, prints the log to the console. Default is True. 
 
-#### **measure_time**
+#### **⚡ measure_time_and_memory**
 Simultaneously measures the execution time and RAM memory consumption of the function. The result can be printed in the terminal or logged in a file.
     
     Args:
@@ -43,9 +46,9 @@ Simultaneously measures the execution time and RAM memory consumption of the fun
         writer_log (bool, optional): If True, records the log in the file. If False, prints the log to the console. Default is True.
 
 ****
-### **Functions**
+### **🧰 Functions**
 
-#### **check_existence_of_folder**
+#### **📁 check_existence_of_folder**
 Checks for the existence of a folder in a directory and returns the full path if it exists. Otherwise, it moves up one directory level and checks again recursively until it finds the folder or reaches the root directory.
 
     Args:
@@ -59,7 +62,7 @@ Checks for the existence of a folder in a directory and returns the full path if
     Raises: 
         FileNotFoundError: If the folder is not found at any level up to the root directory..
 
-#### **set_list_float**
+#### **🔢 set_list_float**
 Receives a string and transforms it into a list of decimal numbers (float).
 
     Args:
@@ -69,7 +72,7 @@ Receives a string and transforms it into a list of decimal numbers (float).
     Retorno:
         (list[float]): A list containing the numeric values.
 
-#### **set_list_int**
+#### **🔢 set_list_int**
 Receives a string and transforms it into a list of int
 
     Args:
@@ -80,3 +83,8 @@ Receives a string and transforms it into a list of int
        (list[int]): A list containing the numeric values.
     
     
+#### **📦 Check_library**
+Checks if a specific library is already installed in the current Python environment. If not, it automatically installs it using pip.
+
+    Args:
+         library (str): Name of the library to check and install.
